@@ -1,0 +1,11 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TikTok login · SGC Uploader</title><link rel="stylesheet" href="style.css"></head><body><main>
+<h1>TikTok login</h1><p class="sub">Copy this whole address and paste it into the terminal window running <code>tiktok_auth.py</code>.</p>
+<div class="card"><pre id="u"></pre><button id="b">Copy</button> <span id="s"></span>
+<p id="e" style="color:#e5534b"></p></div>
+<p>This page does not send your code anywhere; it only shows it so you can copy it.</p>
+<script>
+const u=location.href,p=new URLSearchParams(location.search);document.getElementById('u').textContent=u;
+if(p.get('error'))document.getElementById('e').textContent='TikTok returned an error: '+p.get('error')+' '+(p.get('error_description')||'');
+document.getElementById('b').onclick=async()=>{try{await navigator.clipboard.writeText(u);document.getElementById('s').textContent='Copied';}catch(e){document.getElementById('s').textContent='Select the text and copy it manually';}};
+</script></main></body></html>
